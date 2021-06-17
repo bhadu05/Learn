@@ -8,6 +8,7 @@ interface Ano
      //void math2();
 
 }
+//Generics
 class Gen<T1>
 {
      int a;
@@ -32,6 +33,61 @@ class Gen<T1>
 
      public void setT(T1 t) {
           this.t = t;
+     }
+}
+
+//Comparable
+class laptop implements Comparable<laptop>
+{
+     String brand;
+     int ram;
+     int price;
+
+     public laptop(String brand, int ram, int price) {
+          this.brand = brand;
+          this.ram = ram;
+          this.price = price;
+     }
+
+     public String getBrand() {
+          return brand;
+     }
+
+     public void setBrand(String brand) {
+          this.brand = brand;
+     }
+
+     public int getRam() {
+          return ram;
+     }
+
+     public void setRam(int ram) {
+          this.ram = ram;
+     }
+
+     public int getPrice() {
+          return price;
+     }
+
+     public void setPrice(int price) {
+          this.price = price;
+     }
+
+     @Override
+     public String toString() {
+          return "laptop{" +
+                  "brand='" + brand + '\'' +
+                  ", ram=" + ram +
+                  ", price=" + price +
+                  '}';
+     }
+
+     @Override
+     public int compareTo(laptop obj) {
+          if(this.brand.compareTo(obj.brand)>0)
+               return 1;
+          else
+               return -1;
      }
 }
 public class Main{
@@ -105,10 +161,21 @@ public class Main{
           System.out.println(str.substring(2));
           System.out.println(str.charAt(2));*/
 
-          Main obj = new Main();
+/*          Main obj = new Main();
 
           System.out.println(obj.logic(6,8));
+          
+*/
+        
+         //Comparable
+          List<laptop> list = new ArrayList<laptop>();
+          list.add(new laptop("hp",4,45678));
+          list.add(new laptop("dell",21,34356));
+          list.add(new laptop("lenevo",12,54257));
 
+          Collections.sort(list);
+          for(laptop l : list)
+               System.out.println(l);
 
      }
 
