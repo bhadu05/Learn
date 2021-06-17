@@ -178,5 +178,16 @@ public class Main{
                System.out.println(l);
 
      }
+     
+               //Another way by passing comparator logic.
+          Comparator<laptop> comp = (obj1, obj2) -> {
+               if(obj1.price>obj2.price)
+                    return 1;
+               else return -1;
+          };
+          Collections.sort(list,comp);
+          for(laptop l : list)
+               System.out.println(l);
+
 
 }
