@@ -90,6 +90,15 @@ class laptop implements Comparable<laptop>
                return -1;
      }
 }
+//Inner Class
+class Outer
+{
+     int a;
+     class Inner
+     {
+          int b;
+     }
+}
 public class Main{
 
      static <T> T logic(T ...x)
@@ -188,6 +197,11 @@ public class Main{
           Collections.sort(list,comp);
           for(laptop l : list)
                System.out.println(l);
+         
+                   //Inner Class
+          
+          Outer obj = new Outer();
+          Outer.Inner innerObject = obj.new Inner();
 
 
 }
