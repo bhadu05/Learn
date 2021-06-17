@@ -111,6 +111,15 @@ public class Main{
           }
           return sum;
      }
+     
+          //Varargs
+     static int sum(int... a)
+     {
+          int sum=0;
+          for(int x : a)
+               sum+=x;
+          return sum;
+     }
 
      public static void main(String[] args) {
 /*          Ano obj = new Ano() {
@@ -202,6 +211,17 @@ public class Main{
           
           Outer obj = new Outer();
           Outer.Inner innerObject = obj.new Inner();
+     
+               //Jagged Arrays
+          int a[][]={{1,2},{2,3},{1,2,3}};
+          for(int j=0;j<a.length;j++)
+          {
+               for(int k=0;k<a[j].length;k++)
+                    System.out.println(a[j][k]);
+          }
+
+          //Varargs
+          System.out.println(sum(1,2,34,4,5,6));
 
 
 }
