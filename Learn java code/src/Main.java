@@ -99,6 +99,11 @@ class Outer
           int b;
      }
 }
+//Abstract Class
+abstract class Abs
+{
+     abstract void abs1();
+}
 public class Main{
 
      static <T> T logic(T ...x)
