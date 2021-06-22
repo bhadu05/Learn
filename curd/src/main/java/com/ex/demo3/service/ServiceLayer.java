@@ -160,4 +160,20 @@ public class ServiceLayer
         }
 
     }
+    
+       public customer findByName(String name) {
+        return customerRepository.findByName(name);
+    }
+
+    public customer findByAge(int age) {
+        return customerRepository.findByAge(age);
+    }
+
+    public List<String> CustomQuery() {
+        return customerRepository.CustomQuery();
+    }
+
+    public void SetAge() {
+        customerRepository.SetAge();
+    }
 }
