@@ -20,6 +20,30 @@ public class Controller
     private List<customer> getAllCustomers() {
         return service.getAllCustomers();
     }
+    
+    @GetMapping("/customer/name/{name}")
+    public customer findByName(@PathVariable String name)
+    {
+        return service.findByName(name);
+    }
+    @GetMapping("/customquery")
+    List<String>CustomQuery()
+    {
+        return service.CustomQuery();
+    }
+
+    @GetMapping("/customer/age/{age}")
+    public customer findByAge(@PathVariable int age)
+    {
+        return service.findByAge(age);
+
+    }
+    @GetMapping("/setage")
+    void SetAge()
+    {
+        service.SetAge();
+
+    }
 
     //creating a get mapping to find history of operations done.
     @GetMapping("/customer/history")
