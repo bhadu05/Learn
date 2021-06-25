@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class UthAssignmentApplication {
 
 	public static void main(String[] args) {
-		System.out.println("I do output things");
+		
 		SpringApplication.run(UthAssignmentApplication.class, args);
 	}
 
