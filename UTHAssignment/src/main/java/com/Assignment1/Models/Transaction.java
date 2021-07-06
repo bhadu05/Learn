@@ -83,9 +83,11 @@ public class Transaction {
         this.status = status;
     }
 
-    @Override
+     @Override
     public boolean equals(Object t) {
-        if((Transaction)t==null)
+        if(this==t)
+            return true;
+        if(t==null || this.getClass()!=t.getClass())
             return false;
         if(amount.equals(((Transaction)t).amount) && payeeNumber.equals(((Transaction)t).payeeNumber) && payerNumber.equals(((Transaction)t).payerNumber) && status.equals(((Transaction)t).status))
             return true;
