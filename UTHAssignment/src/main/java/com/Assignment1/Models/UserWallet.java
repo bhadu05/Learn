@@ -41,7 +41,9 @@ public class UserWallet {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj==null)
+        if(this==obj)
+            return true;
+        if(obj==null || this.getClass()!=obj.getClass())
             return false;
         if(mobileNumber.equals(((UserWallet)obj).mobileNumber) && balance.equals(((UserWallet)obj).balance))
             return true;
