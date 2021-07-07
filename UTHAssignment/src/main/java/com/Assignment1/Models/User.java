@@ -25,8 +25,12 @@ public class User {
     private String address1;
 
     private String address2;
+   
+       @CreationTimestamp
+    private LocalDateTime createDateTime;
 
-
+    @UpdateTimestamp
+    private LocalDateTime updateDateTime;
 
 
     public User() {
@@ -107,5 +111,21 @@ public class User {
 
     public void setAddress2(String address2) {
         this.address2 = address2;
+    }
+   
+       public LocalDateTime getCreateDateTime() {
+        return createDateTime;
+    }
+
+    public void setCreateDateTime(LocalDateTime createDateTime) {
+        this.createDateTime = createDateTime;
+    }
+
+    public LocalDateTime getUpdateDateTime() {
+        return updateDateTime;
+    }
+
+    public void setUpdateDateTime(LocalDateTime updateDateTime) {
+        this.updateDateTime = updateDateTime;
     }
 }
