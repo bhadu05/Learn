@@ -88,7 +88,7 @@ class UthAssignmentApplicationTests {
 		User user = new User("alex1234","alex","dutch","9898989898","alex@usa.com","XYZ","PQR");
 		when(userRepository.save(user)).thenReturn(user);
 		when(userRepository.findByUserID((long)1)).thenReturn(user);
-		assertEquals("User updated successfully.",service.updateUser(1L,user));
+		assertEquals(user,service.updateUser(1L,user));
 
 	}
 	@Test
