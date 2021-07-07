@@ -131,8 +131,10 @@ class UthAssignmentApplicationTests {
 		when(userWalletRepository.save(userWallet1)).thenReturn(userWallet1);
 		when(userWalletRepository.save(userWallet2)).thenReturn(userWallet2);
 		when(transactionRepository.save(transaction)).thenReturn(transaction);
-
-		assertEquals(transaction,service.doTransaction(mobileNumber1,mobileNumber2,amount));
+		
+		assertEquals(transaction, transactionService.doTransaction(mobileNumber1,mobileNumber2,amount));
+		assertEquals(userWallet1.getBalance(),payerBalance-amount);
+		assertEquals(userWallet2.getBalance(),payeeBalance+amount);
 
 	}
 
