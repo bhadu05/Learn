@@ -13,6 +13,12 @@ public class UserWallet {
     String mobileNumber;
     @Column
     Double balance;
+    
+        @CreationTimestamp
+    private LocalDateTime createDateTime;
+
+    @UpdateTimestamp
+    private LocalDateTime updateDateTime;
 
     public UserWallet() {
         this.balance = 0.0;
@@ -37,6 +43,22 @@ public class UserWallet {
 
     public void setBalance(Double amount) {
         this.balance = amount;
+    }
+    
+    public LocalDateTime getCreateDateTime() {
+        return createDateTime;
+    }
+
+    public void setCreateDateTime(LocalDateTime createDateTime) {
+        this.createDateTime = createDateTime;
+    }
+
+    public LocalDateTime getUpdateDateTime() {
+        return updateDateTime;
+    }
+
+    public void setUpdateDateTime(LocalDateTime updateDateTime) {
+        this.updateDateTime = updateDateTime;
     }
 
     @Override
