@@ -19,6 +19,12 @@ public class Transaction {
    private Double amount;
    private String status;
    private String Date;
+    
+        @CreationTimestamp
+    private LocalDateTime createDateTime;
+
+    @UpdateTimestamp
+    private LocalDateTime updateDateTime;
 
     public Transaction( String payerNumber, String payeeNumber, Double amount, String status) {
         this.payerNumber = payerNumber;
@@ -81,6 +87,21 @@ public class Transaction {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+        public LocalDateTime getCreateDateTime() {
+        return createDateTime;
+    }
+
+    public void setCreateDateTime(LocalDateTime createDateTime) {
+        this.createDateTime = createDateTime;
+    }
+
+    public LocalDateTime getUpdateDateTime() {
+        return updateDateTime;
+    }
+
+    public void setUpdateDateTime(LocalDateTime updateDateTime) {
+        this.updateDateTime = updateDateTime;
     }
 
      @Override
