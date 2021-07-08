@@ -24,12 +24,14 @@ public class JwtTokenGenerateController {
        
         ParamCheck.checkAuthorizationBody(authorizationBody);
 
-            //Authenticate user.
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authorizationBody.getUserName(), authorizationBody.getPassword()));
-
+           //Authenticate user.
+        if(authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authorizationBody.getUserName(), authorizationBody.getPassword())).isAuthenticated())
         //If user is authenticated.
         //Generate token from username.
-        return jwtUtil.generateToken(authorizationBody.getUserName());
+        return new ResponseEntity<String>(jwtUtil.generateToken(authorizationBody.getUserName()), HttpStatus.OK);
+
+        else
+            return new ResponseEntity<String>("User is unauthorized",HttpStatus.UNAUTHORIZED);
 
     }
 }
