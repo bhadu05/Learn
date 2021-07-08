@@ -27,6 +27,12 @@ public class MyControllerExceptionHandler {
         expiredJwtException.getMessage();
         return new ResponseEntity<String >(expiredJwtException.getMessage(),HttpStatus.FORBIDDEN);
     }
+    
+    @ExceptionHandler(InternalAuthenticationServiceException.class)
+    public ResponseEntity<String >unuthorisedUser(InternalAuthenticationServiceException internalAuthenticationServiceException)
+    {
+        return new ResponseEntity<String>("Invalid username or password.", HttpStatus.UNAUTHORIZED);
+    }
 
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
     public ResponseEntity<String> handleDulplicates(SQLIntegrityConstraintViolationException invalidArgumentException)
